@@ -32,7 +32,7 @@ export const fetchQuestionsFailure = (err) => ({
 export const fetchQuestions = () => {
     return dispatch => {
         axios
-            .get(`http://localhost:3000/questions.json`)
+            .get(`/questions.json`)
             .then(res => {
                 setTimeout(() => {
                     dispatch(fetchQuestionsSuccess(res.data.questions));
