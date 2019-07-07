@@ -1,0 +1,19 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "An Assessment Application",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "xamine",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
