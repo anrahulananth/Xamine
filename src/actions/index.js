@@ -34,9 +34,7 @@ export const fetchQuestions = () => {
         axios
             .get(`/questions.json`)
             .then(res => {
-                setTimeout(() => {
-                    dispatch(fetchQuestionsSuccess(res.data.questions));
-                }, 2000);
+                dispatch(fetchQuestionsSuccess(res.data.questions));
             })
             .catch(err => {
                 dispatch(fetchQuestionsFailure(err.message));

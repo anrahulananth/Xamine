@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
 
 export default class Details extends Component {
     state = {
@@ -14,7 +17,7 @@ export default class Details extends Component {
         });
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -23,13 +26,37 @@ export default class Details extends Component {
     render () {
         const { userName, email } = this.state;
         return (
-            <div className="userInfo">
-                <h1>Please Enter Your Details to Start the assessment</h1>
-                <h2>You will have 10 minutes to complete the assessment. If you refresh or go back or close the window your progress will be lost</h2>
-                <label>UserName</label><input className="userName" type="text" name="userName" value={userName} onChange={this.handleChange}></input><br />
-                <label>Email</label><input className="email" type="email" name="email" value={email} onChange={this.handleChange}></input><br />
-                <button className="detailsSubmit" onClick={this.handleDetailsSubmit}>Continue</button>
-            </div>
+            <React.Fragment>
+                <h1>Xamine</h1>
+                <Paper>
+                    <h3>Please Enter Your Details to Start the assessment</h3>
+                    <h3>You will have 10 minutes to complete the assessment. If you refresh or go back or close the window your progress will be lost</h3>
+                </Paper>
+                <Paper>
+                    <br />
+                    <br />
+                    <TextField
+                        className="userName"
+                        label="UserName"
+                        name="userName"
+                        value={userName}
+                        onChange={this.handleChange}
+                    ></TextField>
+                    <br />
+                    <br />
+                    <TextField
+                        label="Email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}>
+                    </TextField>
+                    <br />
+                    <br />
+                    <Button className="detailsSubmit" variant="contained" color="primary" onClick={this.handleDetailsSubmit}>Continue</Button>
+                    <br />
+                    <br />
+                </Paper>
+            </React.Fragment>
         );
     }
 }

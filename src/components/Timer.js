@@ -39,7 +39,7 @@ class Timer extends Component {
     }
     render () {
         return (
-            <div className="timer">{this.convertSecondsToMinutes()}</div>
+            <h1 className="timer">{this.convertSecondsToMinutes()}</h1>
         );
     }
 }

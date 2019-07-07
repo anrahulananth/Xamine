@@ -3,7 +3,7 @@ An Assessment Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This application is Hosted on Heroku in the following URL:[https://xamine.herokuapp.com/](https://xamine.herokuapp.com/)
+This application is Hosted on Heroku in the following URL: [https://xamine.herokuapp.com/](https://xamine.herokuapp.com/)
 
 ## Available Scripts
 

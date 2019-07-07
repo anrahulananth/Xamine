@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Question from './Question';
 import Timer from './Timer';
+import Button from '@material-ui/core/Button';
 import { completedAssessment } from '../actions';
+import Paper from '@material-ui/core/Paper'
+import { withStyles } from '@material-ui/styles';
+
+const StyledButton = withStyles({
+    root: {
+        margin: '30px 30px',
+    },
+})(Button);
 
 class QuestionView extends Component {
     state = {
@@ -56,12 +65,15 @@ class QuestionView extends Component {
         const { questions } = this.props;
         const { activeQuestion, choiceArray } = this.state;
         return (
-            <div className="questionsView">
+            <Paper>
+                <br/>
                 <Timer handleCompleted={this.handleCompleted} />
-                <Question choice={choiceArray[activeQuestion]} questionData={questions[activeQuestion]} handleChoice={this.handleChoice} />
-                {activeQuestion ? <button className="prevQuestion" onClick={this.handlePrev}>Prev</button> : false}
-                <button className="nextQuestion" onClick={this.handleNext}>{activeQuestion === questions.length - 1 ? 'Submit' : 'Next'}</button>
-            </div>
+                <Question number={activeQuestion} choice={choiceArray[activeQuestion]} questionData={questions[activeQuestion]} handleChoice={this.handleChoice} />
+                {activeQuestion ? <StyledButton className="questionButton" variant="contained" color="primary" onClick={this.handlePrev}>Prev</StyledButton> : false}
+                <StyledButton className="questionButton" variant="contained" color="primary" onClick={this.handleNext}>{activeQuestion === questions.length - 1 ? 'Submit' : 'Next'}</StyledButton>
+                <br/>
+                <br />
+            </Paper>
         )
     }
 }
