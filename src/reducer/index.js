@@ -29,9 +29,7 @@ export const userReducer = (state = { userName: '', email: '' }, action) => {
 
 export const resultReducer = (state = false, action) => {
     switch (action.type) {
-        case 'SHOW_ASSESSMENT_RESULTS': return {
-            correctAnswers: action.correctAnswers
-        };
+        case 'SHOW_ASSESSMENT_RESULTS': return action.completed
 
         case 'RESET_ASSESSMENT_RESULTS': return false;
 

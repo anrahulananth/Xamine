@@ -10,9 +10,9 @@ export const stopTime = () => ({
     type: 'STOP_TIME'
 });
 
-export const completedAssessment = (correctAnswers) => ({
+export const completedAssessment = (completed) => ({
     type: 'SHOW_ASSESSMENT_RESULTS',
-    correctAnswers
+    completed
 });
 
 export const resetAssessment = () => ({

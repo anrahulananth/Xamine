@@ -16,7 +16,7 @@ const StyledButton = withStyles({
 class QuestionView extends Component {
     state = {
         activeQuestion: 0,
-        choiceArray: this.props.questions.map(() => { return false }),
+        choiceArray: this.props.questions.map(() => { return false })
     }
 
     handleChoice = (choice) => {
@@ -51,14 +51,25 @@ class QuestionView extends Component {
     handleCompleted = () => {
         let { choiceArray } = this.state;
         const { questions } = this.props;
-        choiceArray = choiceArray.filter((choice, index) => {
-            if (choiceArray[index] !== false){
-                return questions[index].answer === (choiceArray[index] + 1)
+        let attemptedArray = [...choiceArray];
+        attemptedArray = choiceArray.filter((attemptedItem, index) => {
+            if (attemptedItem !== false) {
+                return true;
             } else {
                 return false;
             }
         });
-        this.props.completedAssessment(choiceArray.length);
+        choiceArray = choiceArray.filter((choice, index) => {
+            if (choice !== false){
+                return questions[index].answer === (choice + 1)
+            } else {
+                return false;
+            }
+        });
+        this.props.completedAssessment({
+            correctAnswers: choiceArray.length,
+            attempted: attemptedArray.length
+        });
     }
 
     render () {
@@ -86,8 +97,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        completedAssessment: (correctAnswers) => {
-            dispatch(completedAssessment(correctAnswers));
+        completedAssessment: (completed) => {
+            dispatch(completedAssessment(completed));
         }
     }
 }
