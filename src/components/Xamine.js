@@ -24,7 +24,7 @@ class Xamine extends Component {
             <div className="xamine">
                 {userInfo.userName && userInfo.email ?
                     completed ?
-                        <Result answeredCorrect={completed.correctAnswers} attempted={completed.attempted} handleReset={this.handleReset} /> :
+                        <Result userInfo={userInfo} answeredCorrect={completed.correctAnswers} attempted={completed.attempted} handleReset={this.handleReset} /> :
                         questions.length ? <QuestionView /> : false
                     :
                     <Details handleSubmit={this.handleSubmit} />
