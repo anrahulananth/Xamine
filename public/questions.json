@@ -1,0 +1,52 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Script Tag can be placed in",
+            "code": false,
+            "choices": [
+                "head",
+                "head & body",
+                "title & head",
+                "all of the above"
+            ],
+            "answer": 2
+        },
+        {
+            "id": 2,
+            "question": "The below statement will refer to",
+            "code": "a === b",
+            "choices": [
+                "Both a and b are of equal value, type and reference address",
+                "Both a and b are of equal value",
+                "Both a and b are of equal value and type",
+                "Incorrect Statement"
+            ],
+            "answer": 3
+        },
+        {
+            "id": 3,
+            "question": "Consider the below snippet code and choose the result",
+            "code": "var stringValue = '123';var intvalue = 123; alert(stringValue + intvalue);",
+            "choices": [
+                "123123",
+                "246",
+                "123246",
+                "Exception"
+            ],
+            "answer": 1
+        },
+        {
+            "id": 4,
+            "question": "A statement block is a ",
+            "code": false,
+            "choices": [
+                "conditional block",
+                "block that contains a single element",
+                "both conditional block and single statement ",
+                "block that combines multiple statements into single compound statement"
+            ],
+            "answer": 4
+        }
+    ]
+}
