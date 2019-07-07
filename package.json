@@ -2,7 +2,7 @@
   "name": "xamine",
   "version": "1.0.0",
   "description": "An assessment application",
-  "homepage": "https://anrahulananth.github.io/xamine",
+  "homepage": "https://xamine.herokuapp.com",
   "dependencies": {
     "axios": "^0.18.0",
     "concurrently": "3.4.0",
@@ -15,11 +15,17 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anrahulananth/xamine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anrahulananth/xamine/issues"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "gh-pages -d public",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
